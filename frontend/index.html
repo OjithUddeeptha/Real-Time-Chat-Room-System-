@@ -1,0 +1,44 @@
+<!-- frontend/index.html -->
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Realtime Chat Room</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div id="login-overlay" class="overlay">
+        <form id="login-form" class="card">
+            <h2>Join Chat</h2>
+            <label>
+        Username
+        <input id="username" type="text" placeholder="Your name" maxlength="32" />
+      </label>
+            <label>
+        Room
+        <input id="room" type="text" placeholder="room name (e.g. lobby)" maxlength="32" />
+      </label>
+            <button type="submit">Join</button>
+        </form>
+    </div>
+
+    <main class="container">
+        <header class="header">
+            <h1>Chat Room <span id="room-label"></span></h1>
+        </header>
+
+        <section id="messages" class="messages" aria-live="polite"></section>
+
+        <form id="message-form" class="composer">
+            <input id="message-input" type="text" placeholder="Type a message..." autocomplete="off" />
+            <button type="submit">Send</button>
+        </form>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

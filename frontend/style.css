@@ -1,0 +1,197 @@
+:root {
+    --bg: #1a1a2e;
+    --card: #16213e;
+    --muted: #a9a9a9;
+    --accent: #0f3460;
+    --text: #e0e0e0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    background-image: url('newone.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100vh;
+    /*     margin: 0; */
+    /* background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100vh;
+    margin: 0; */
+    font-family: 'Poppins', sans-serif;
+    color: var(--text);
+}
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.card {
+    background: var(--card);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px;
+}
+
+.card h2 {
+    margin: 0 0 1.5rem;
+    font-size: 1.75rem;
+    text-align: center;
+}
+
+.card label {
+    display: block;
+    margin-bottom: 1rem;
+    color: var(--muted);
+    font-size: 1rem;
+}
+
+.card input {
+    width: 100%;
+    padding: .8rem;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: transparent;
+    color: var(--text);
+    margin-top: .5rem;
+}
+
+.card button {
+    width: 100%;
+    margin-top: 1.5rem;
+    padding: .8rem;
+    border-radius: 10px;
+    border: 0;
+    background: var(--accent);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.card button:hover {
+    background-color: #1a4a8a;
+}
+
+.container {
+    max-width: 900px;
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 4rem);
+    padding: 0 1rem;
+    background: rgba(22, 33, 62, 0.8);
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.header {
+    padding: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.messages {
+    flex: 1;
+    padding: 1rem;
+    overflow-y: auto;
+}
+
+.message {
+    padding: .75rem 1rem;
+    border-radius: 12px;
+    margin-bottom: .5rem;
+    max-width: 70%;
+}
+
+.message.system {
+    font-style: italic;
+    color: var(--muted);
+    background: transparent;
+    text-align: center;
+}
+
+.message.sent {
+    background: var(--accent);
+    color: white;
+    align-self: flex-end;
+}
+
+.message.received {
+    background: #2c3e50;
+    color: var(--text);
+    align-self: flex-start;
+}
+
+.message strong {
+    display: block;
+    margin-bottom: .25rem;
+}
+
+.composer {
+    display: flex;
+    gap: .5rem;
+    padding: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.composer input {
+    flex: 1;
+    padding: .8rem;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: transparent;
+    color: var(--text);
+}
+
+.composer button {
+    padding: .8rem 1.2rem;
+    border-radius: 10px;
+    border: 0;
+    background: var(--accent);
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.composer button:hover {
+    background-color: #1a4a8a;
+}
+
+.timestamp {
+    display: block;
+    margin-top: .25rem;
+    color: var(--muted);
+    font-size: .75rem;
+}
+
+
+/* Mobile tweaks */
+
+@media (max-width:600px) {
+    .card {
+        max-width: 94%;
+    }
+    .container {
+        margin: 1rem auto;
+        height: calc(100vh - 2rem);
+    }
+    .header h1 {
+        font-size: 1.2rem;
+    }
+}
